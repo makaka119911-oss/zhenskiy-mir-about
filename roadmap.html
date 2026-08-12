@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЖЕНСКИЙ МИР — дорожная карта развития</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --paper:#F2EFEA; --ink:#2c2327; --muted:#6f626a; --soft:#9c8e96; --rule:rgba(44,35,39,0.13);
+    --bordeaux:#6b4d57; --bordeaux-tint:rgba(107,77,87,0.07); --gold:#b8936a; --rose:#d8b4a8;
+    --sans:'Manrope',system-ui,sans-serif; --serif:'Cormorant Garamond',Georgia,serif;
+  }
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(242,239,234,0.92);backdrop-filter:blur(8px);z-index:10;}
+  .brand{font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:0.06em;color:var(--bordeaux);}
+  .nav-links{display:flex;gap:1.5rem;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:600;transition:color .15s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--bordeaux);}
+  .nav-cta{background:var(--bordeaux);color:#fff;padding:0.55rem 1.1rem;border-radius:999px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+  @media(max-width:640px){.nav-links{display:none;}}
+  .wrap{max-width:880px;margin:0 auto;padding:3.2rem 5vw 2rem;}
+  .head{text-align:center;margin-bottom:2.6rem;}
+  .head .eyebrow{font-family:var(--serif);font-size:0.9rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+  .head h1{font-family:var(--serif);font-size:clamp(2.1rem,4vw+1rem,3.2rem);font-weight:600;line-height:1.05;}
+  .head p{color:var(--muted);font-size:1.02rem;max-width:52ch;margin:0.9rem auto 0;line-height:1.6;}
+  .phase{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:1.6rem 1.8rem;margin-bottom:1.3rem;}
+  .phase-head{display:flex;align-items:baseline;gap:0.9rem;margin-bottom:0.7rem;}
+  .phase-tag{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--bordeaux);padding:0.25rem 0.7rem;border-radius:999px;}
+  .phase-tag.now{background:var(--gold);}
+  .phase h2{font-family:var(--serif);font-size:1.5rem;font-weight:600;}
+  .phase ul{list-style:none;}
+  .phase li{color:var(--muted);font-size:0.94rem;line-height:1.6;padding-left:1.1rem;position:relative;margin-bottom:0.3rem;}
+  .phase li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .foot{margin-top:2.6rem;text-align:center;font-size:0.76rem;color:var(--soft);letter-spacing:0.05em;}
+</style>
+</head>
+<body>
+<nav>
+  <span class="brand">ЖЕНСКИЙ МИР</span>
+  <div class="nav-links">
+    <a href="index.html">Обзор</a>
+    <a href="architecture.html">Архитектура</a>
+    <a href="roadmap.html" class="active">Дорожная карта</a>
+  </div>
+  <a class="nav-cta" href="mailto:hi@zhenskiy-mir.com">Связаться</a>
+</nav>
+
+<div class="wrap">
+  <div class="head">
+    <p class="eyebrow">Дорожная карта · Roadmap</p>
+    <h1>Развитие платформы</h1>
+    <p>Сбалансированный план: укрепляем продукт, растим научный контур и сообщество. Каждый этап проверяем на реальных пользователях.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head">
+      <span class="phase-tag now">Сейчас</span>
+      <h2>Живая платформа v0.12</h2>
+    </div>
+    <ul>
+      <li>Заметки голосом и текстом — работают.</li>
+      <li>Дневник настроения и календарь цикла — работают.</li>
+      <li>Женские круги, чаты, личные сообщения — работают.</li>
+      <li>Личный ассистент и панель для исследователя — работают.</li>
+      <li>Опросы-анкеты для научных данных — собираются добровольно и бережно.</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head">
+      <span class="phase-tag">Этап 1</span>
+      <h2>Масштаб исследований</h2>
+    </div>
+    <ul>
+      <li>Расширение набора анкет и интеграция с научными партнёрами.</li>
+      <li>Прозрачная панель аналитики данных для исследователя.</li>
+      <li>Улучшенная обработка голосовых заметок (точность распознавания).</li>
+      <li>Первые публикации результатов на основе собранных данных.</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head">
+      <span class="phase-tag">Этап 2</span>
+      <h2>Сообщество и международный рост</h2>
+    </div>
+    <ul>
+      <li>Модерация и безопасность женских кругов.</li>
+      <li>Партнёрство со специалистами: психологи, сексологи, гинекологи.</li>
+      <li>Локализация и запуск в новых странах.</li>
+      <li>Монетизация: премиум-программы, подписки на круги, спонсорские исследования.</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head">
+      <span class="phase-tag">Этап 3</span>
+      <h2>Экосистема</h2>
+    </div>
+    <ul>
+      <li>Персональные рекомендации на основе данных дневника и цикла.</li>
+      <li>Автоматический ассистент с глубоким пониманием контекста.</li>
+      <li>Открытая платформа для исследовательских проектов.</li>
+      <li>Устойчивая модель дохода и возврат инвестиций.</li>
+    </ul>
+  </div>
+
+  <div class="foot">ЖЕНСКИЙ МИР · дорожная карта · © 2026</div>
+</div>
+</body>
+</html>

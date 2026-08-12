@@ -3,138 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЖЕНСКИЙ МИР — о платформе</title>
+<title>ЖЕНСКИЙ МИР — платформа международного женского сообщества</title>
+<meta name="description" content="Женский мир — безопасное цифровое пространство для женщин: заметки, дневник, календарь цикла, женские круги, ассистент и добровольные научные исследования.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --color-paper: #F2EFEA;
-    --color-ink: #3a2e33;
-    --color-muted: #7a6b72;
-    --color-soft: #a89aa1;
-    --color-rule: rgba(58,46,51,0.14);
-    --color-bordeaux: #6b4d57;
-    --color-bordeaux-tint: rgba(107,77,87,0.08);
-    --color-gold: #b8936a;
-    --color-rose: #d8b4a8;
-    --font-sans: 'Manrope', system-ui, sans-serif;
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --paper:#F2EFEA; --paper2:#EBE6DF; --ink:#2c2327; --muted:#6f626a; --soft:#9c8e96;
+    --rule:rgba(44,35,39,0.13); --bordeaux:#6b4d57; --bordeaux-tint:rgba(107,77,87,0.07);
+    --gold:#b8936a; --rose:#d8b4a8;
+    --sans:'Manrope',system-ui,sans-serif; --serif:'Cormorant Garamond',Georgia,serif;
   }
-  body { font-family: var(--font-sans); background: var(--color-paper); min-height: 100vh; padding: 3rem 1.5rem; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
-  .container { max-width: 960px; margin: 0 auto; }
-  .header { margin-bottom: 2.4rem; text-align: center; }
-  .header-eyebrow { font-family: var(--font-serif); font-size: 0.98rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.9rem; }
-  h1 { font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw + 1rem, 3.4rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1rem; }
-  .lede { font-size: 1.12rem; line-height: 1.7; color: var(--color-muted); max-width: 60ch; margin: 0 auto; }
+  body { font-family:var(--sans); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; }
 
-  .section-lead { margin: 2.6rem 0 1.2rem; text-align: center; }
-  .section-lead h2 { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; }
-  .section-lead p { color: var(--color-muted); font-size: 0.96rem; margin-top: 0.3rem; }
+  /* Nav */
+  nav { display:flex; align-items:center; justify-content:space-between; padding:1.1rem 5vw; border-bottom:1px solid var(--rule); position:sticky; top:0; background:rgba(242,239,234,0.92); backdrop-filter:blur(8px); z-index:10; }
+  .brand { font-family:var(--serif); font-size:1.25rem; font-weight:700; letter-spacing:0.06em; color:var(--bordeaux); }
+  .nav-links { display:flex; gap:1.5rem; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; font-weight:600; transition:color .15s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--bordeaux); }
+  .nav-cta { background:var(--bordeaux); color:#fff; padding:0.55rem 1.1rem; border-radius:999px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:background .15s; }
+  .nav-cta:hover { background:#7a5a66; }
+  @media (max-width:640px){ .nav-links{display:none;} }
 
-  /* Сценарий — нумерованные шаги */
-  .steps { display: flex; flex-direction: column; gap: 0.8rem; margin: 1.4rem 0; }
-  .step { display: flex; gap: 1.1rem; align-items: flex-start; background: #fff; border-radius: 12px; border: 1px solid var(--color-rule); padding: 1.15rem 1.3rem; }
-  .step-num { width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: var(--color-bordeaux); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; }
-  .step-num.alt { background: var(--color-gold); }
-  .step-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; letter-spacing: -0.01em; }
-  .step-body p { color: var(--color-muted); font-size: 0.94rem; line-height: 1.55; }
+  .wrap { max-width:1080px; margin:0 auto; padding:3.5rem 5vw 2rem; }
 
-  /* Карточки-аудитории */
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.6rem 0; }
-  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
-  .card { background: #fff; border-radius: 12px; border: 1px solid var(--color-rule); padding: 1.4rem 1.5rem; }
-  .card .tag { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 0.55rem; font-weight: 700; }
-  .card h3 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .card p { color: var(--color-muted); font-size: 0.93rem; line-height: 1.6; }
+  /* Hero */
+  .hero { text-align:center; max-width:760px; margin:0 auto 3.2rem; }
+  .eyebrow { font-family:var(--serif); font-size:0.98rem; font-weight:600; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+  .hero h1 { font-family:var(--serif); font-size:clamp(2.4rem,5vw+1rem,4.2rem); font-weight:600; line-height:1.04; letter-spacing:-0.02em; margin-bottom:1.2rem; }
+  .hero h1 em { font-style:italic; color:var(--bordeaux); }
+  .lede { font-size:1.12rem; line-height:1.7; color:var(--muted); max-width:56ch; margin:0 auto 2rem; }
+  .hero-actions { display:flex; gap:0.9rem; justify-content:center; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:0.8rem 1.6rem; border-radius:999px; font-weight:600; font-size:0.95rem; text-decoration:none; transition:all .15s; }
+  .btn-primary { background:var(--bordeaux); color:#fff; }
+  .btn-primary:hover { background:#7a5a66; }
+  .btn-outline { border:1.5px solid var(--bordeaux); color:var(--bordeaux); }
+  .btn-outline:hover { background:var(--bordeaux-tint); }
 
-  /* CTA */
-  .cta { text-align: center; background: var(--color-bordeaux); color: #fff; border-radius: 16px; padding: 2rem 1.5rem; margin-top: 2.6rem; }
-  .cta h2 { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .cta p { opacity: 0.92; font-size: 1.02rem; line-height: 1.6; }
+  /* Stats */
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:2.6rem 0; }
+  @media (max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} }
+  .stat { text-align:center; padding:1.4rem 1rem; border:1px solid var(--rule); border-radius:14px; background:#fff; }
+  .stat b { display:block; font-family:var(--serif); font-size:2rem; font-weight:700; color:var(--bordeaux); }
+  .stat span { font-size:0.78rem; color:var(--muted); letter-spacing:0.02em; }
 
-  .footer { margin-top: 2.2rem; text-align: center; font-size: 0.76rem; letter-spacing: 0.06em; color: var(--color-soft); }
+  /* Sections */
+  .sec-title { text-align:center; font-family:var(--serif); font-size:2rem; font-weight:600; margin-bottom:0.4rem; }
+  .sec-sub { text-align:center; color:var(--muted); font-size:0.98rem; margin-bottom:2.2rem; }
+
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+  @media (max-width:720px){ .grid-2{grid-template-columns:1fr;} }
+  .card { background:#fff; border:1px solid var(--rule); border-radius:14px; padding:1.6rem 1.6rem; }
+  .card .tag { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:0.5rem; }
+  .card h3 { font-family:var(--serif); font-size:1.35rem; font-weight:600; margin-bottom:0.5rem; }
+  .card p { color:var(--muted); font-size:0.94rem; line-height:1.6; }
+
+  .road { margin:2.4rem 0; }
+  .road-item { display:flex; gap:1.2rem; padding:1.2rem 0; border-bottom:1px solid var(--rule); position:relative; }
+  .road-item:last-child{border-bottom:none;}
+  .road-date { flex-shrink:0; width:118px; font-family:var(--serif); font-weight:700; color:var(--bordeaux); font-size:1.05rem; padding-top:0.1rem; }
+  .road-body h4 { font-size:1.02rem; font-weight:700; margin-bottom:0.25rem; }
+  .road-body p { color:var(--muted); font-size:0.9rem; line-height:1.55; }
+
+  .cta { text-align:center; background:var(--bordeaux); color:#fff; border-radius:16px; padding:2.4rem 1.5rem; margin-top:3rem; }
+  .cta h2 { font-family:var(--serif); font-size:2.1rem; font-weight:600; margin-bottom:0.6rem; }
+  .cta p { opacity:0.92; font-size:1.04rem; line-height:1.6; margin-bottom:1.4rem; }
+  .cta .btn-outline { border-color:#fff; color:#fff; background:transparent; }
+  .cta .btn-outline:hover{ background:rgba(255,255,255,0.12); }
+
+  footer { border-top:1px solid var(--rule); margin-top:3rem; padding:1.6rem 5vw; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; font-size:0.76rem; color:var(--soft); letter-spacing:0.05em; }
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <p class="header-eyebrow">ЖЕНСКИЙ МИР · о платформе</p>
-    <h1>Пространство, которое заботится о женщине</h1>
-    <p class="lede">Женский мир — это тихое и безопасное цифровое пространство: заметки голосом, дневник настроения, календарь цикла, женские круги и личный ассистент. Плюс — инструмент для добровольных исследований женского здоровья.</p>
+<nav>
+  <span class="brand">ЖЕНСКИЙ МИР</span>
+  <div class="nav-links">
+    <a href="index.html" class="active">Обзор</a>
+    <a href="architecture.html">Архитектура</a>
+    <a href="roadmap.html">Дорожная карта</a>
+  </div>
+  <a class="nav-cta" href="mailto:hi@zhenskiy-mir.com">Связаться</a>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Платформа женского сообщества</p>
+    <h1>Пространство, которое <em>заботится</em> о женщине</h1>
+    <p class="lede">Женский мир — безопасное цифровое пространство для женщин по всему миру: заметки голосом, дневник настроения, календарь цикла, женские круги, личный ассистент и добровольные научные исследования женского здоровья.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="roadmap.html">Смотреть развитие</a>
+      <a class="btn btn-outline" href="architecture.html">Как устроено</a>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><b>6+</b><span>модулей для женщины</span></div>
+    <div class="stat"><b>25</b><span>структур данных БД</span></div>
+    <div class="stat"><b>3</b><span>направления роста</span></div>
+    <div class="stat"><b>v0.12</b><span>текущая версия</span></div>
   </div>
 
-  <div class="section-lead">
-    <h2>Как это работает</h2>
-    <p>От первого входа до пользы — простыми словами, без технических деталей</p>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <h3>Женщина заходит и чувствует себя в безопасности</h3>
-        <p>Мягкий дизайн и понятный интерфейс. Всё под рукой: записать мысль голосом, отметить настроение, заглянуть в календарь цикла.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num alt">2</div>
-      <div class="step-body">
-        <h3>По желанию — заполняет опрос</h3>
-        <p>Несколько минут, аккуратные вопросы. Её ответы (добровольно и бережно) становятся данными для научных исследований женского либидо и здоровья.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h3>Получает пользу — и возвращается</h3>
-        <p>Календарь цикла, женские круги, поддержка подруг, ассистент. Платформа не давит и не навязывается — она просто рядом.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num alt">4</div>
-      <div class="step-body">
-        <h3>Данные приходят исследователю</h3>
-        <p>Собранные ответы попадают к учёному-партнёру. Приватность защищена, участие добровольное — это честный и ответственный обмен.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-lead">
-    <h2>Для кого это</h2>
-    <p>Каждая сторона получает своё</p>
-  </div>
-
-  <div class="grid">
+  <p class="sec-title">Это больше, чем приложение</p>
+  <p class="sec-sub">Три стороны, которые усиливают друг друга</p>
+  <div class="grid-2">
     <div class="card">
       <p class="tag">Для женщины</p>
-      <h3>Тёплое каждодневное пространство</h3>
-      <p>Заметки, настроение, цикл, подруги — место, куда хочется возвращаться. Без шума и давления.</p>
+      <h3>Тёплое ежедневное пространство</h3>
+      <p>Заметки, настроение, цикл, подруги. Место, куда возвращаются — потому что здесь безопасно и бережно, без давления.</p>
     </div>
     <div class="card">
       <p class="tag">Для исследователя</p>
-      <h3>Структурированные данные о женском здоровье</h3>
-      <p>Платформа собирает ответы на анкеты в аккуратную, удобную для анализа форму — готовый материал для исследования.</p>
+      <h3>Структурированные данные</h3>
+      <p>Платформа собирает ответы на анкеты в аккуратную, пригодную для анализа форму. Честный и добровольный вклад в науку о женском здоровье.</p>
     </div>
     <div class="card">
       <p class="tag">Для инвестора</p>
-      <h3>Живой продукт, а не идея</h3>
-      <p>Уже работает: веб и мобильное приложение, видео-круги, голосовые заметки, уведомления, панель статистики. Есть что развивать.</p>
+      <h3>Живой продукт</h3>
+      <p>Не идея на бумаге: работает веб и мобильное приложение, видео-круги, голосовые заметки, уведомления, панель статистики.</p>
     </div>
     <div class="card">
       <p class="tag">О надёжности</p>
       <h3>Приватность в основе</h3>
-      <p>Личные заметки и данные защищены: авторизация, безопасное соединение, ограниченный доступ. Доверие — главный актив.</p>
+      <p>Авторизация, безопасное соединение, ограниченный доступ к данным. Доверие пользователей — главный актив платформы.</p>
     </div>
+  </div>
+
+  <div class="road">
+    <p class="sec-title">Куда движемся</p>
+    <p class="sec-sub">Ориентиры развития платформы</p>
+    <div class="road-item"><div class="road-date">Сегодня</div><div class="road-body"><h4>Работающая платформа</h4><p>Заметки, дневник, цикл, круги, ассистент, опросы. Полный контур продукта запущен.</p></div></div>
+    <div class="road-item"><div class="road-date">Квартал 1</div><div class="road-body"><h4>Масштаб исследований</h4><p>Расширение анкет, интеграция с исследователями, прозрачная аналитика данных.</p></div></div>
+    <div class="road-item"><div class="road-date">Квартал 2</div><div class="road-body"><h4>Сообщество и партнёры</h4><p>Модерация кругов, партнёрства со специалистами, международный запуск.</p></div></div>
   </div>
 
   <div class="cta">
     <h2>Каждый день — чуть ближе к себе.</h2>
     <p>Безопасное пространство для женщины — и честные данные для науки.</p>
-  </div>
-
-  <div class="footer">
-    <span>ЖЕНСКИЙ МИР · v0.12.2</span>
+    <a class="btn btn-outline" href="mailto:hi@zhenskiy-mir.com">Обсудить инвестиции</a>
   </div>
 </div>
+
+<footer>
+  <span>ЖЕНСКИЙ МИР · версия 0.12.2</span>
+  <span>© 2026 · подготовлено для инвестора</span>
+</footer>
 </body>
 </html>

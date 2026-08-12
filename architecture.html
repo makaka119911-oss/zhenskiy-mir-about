@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЖЕНСКИЙ МИР — техническая архитектура</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--paper:#F2EFEA;--ink:#2c2327;--muted:#6f626a;--rule:rgba(44,35,39,0.13);--bordeaux:#6b4d57;--gold:#b8936a;--rose:#d8b4a8;--sans:'Manrope',sans-serif;--serif:'Cormorant Garamond',serif;}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(242,239,234,0.92);z-index:10;}
+  .brand{font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:0.06em;color:var(--bordeaux);}
+  .nav-links{display:flex;gap:1.5rem;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:600;}
+  .nav-links a:hover,.nav-links a.active{color:var(--bordeaux);}
+  .nav-cta{background:var(--bordeaux);color:#fff;padding:0.55rem 1.1rem;border-radius:999px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+  @media(max-width:640px){.nav-links{display:none;}}
+  .wrap{max-width:900px;margin:0 auto;padding:3.2rem 5vw 2rem;}
+  .head{text-align:center;margin-bottom:2.4rem;}
+  .head .eyebrow{font-family:var(--serif);font-size:0.9rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+  .head h1{font-family:var(--serif);font-size:2.4rem;font-weight:600;}
+  .head p{color:var(--muted);max-width:55ch;margin:0.9rem auto 0;line-height:1.6;font-size:1rem;}
+  .layer{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:1.2rem;}
+  .layer h3{font-family:var(--serif);font-size:1.25rem;font-weight:600;margin-bottom:0.4rem;}
+  .layer p{color:var(--muted);font-size:0.92rem;line-height:1.6;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.7rem;}
+  .tag{font-size:0.72rem;font-weight:600;background:var(--paper2,#ebe6df);padding:0.3rem 0.8rem;border-radius:999px;color:var(--bordeaux);}
+  .foot{margin-top:2.4rem;text-align:center;font-size:0.76rem;color:var(--soft);letter-spacing:0.05em;}
+</style>
+</head>
+<body>
+<nav>
+  <span class="brand">ЖЕНСКИЙ МИР</span>
+  <div class="nav-links">
+    <a href="index.html">Обзор</a>
+    <a href="architecture.html" class="active">Архитектура</a>
+    <a href="roadmap.html">Дорожная карта</a>
+  </div>
+  <a class="nav-cta" href="mailto:hi@zhenskiy-mir.com">Связаться</a>
+</nav>
+
+<div class="wrap">
+  <div class="head">
+    <p class="eyebrow">Техническая архитектура</p>
+    <h1>Надёжный фундамент</h1>
+    <p>Платформа построена на проверенном стеке: современный фронтенд, масштабируемый бэкенд, безопасные видеозвонки и распознавание речи. Детали ниже.</p>
+  </div>
+
+  <div class="layer">
+    <h3>Фронтенд</h3>
+    <p>Быстрое одностраничное приложение, доступное и с телефона. Прогрессивный веб-апп (PWA) — работает офлайн и ставится на главный экран.</p>
+    <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">PWA</span></div>
+  </div>
+
+  <div class="layer">
+    <h3>Бэкенд</h3>
+    <p>Масштабируемое API, обслуживающее все модули: заметки, дневник, цикл, форумы, сообщества, ассистент и опросы.</p>
+    <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">REST API</span></div>
+  </div>
+
+  <div class="layer">
+    <h3>Данные</h3>
+    <p>Надёжное хранение личных данных с миграциями. Кэширование для скорости. Приватность защищена на уровне базы.</p>
+    <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">25 таблиц</span><span class="tag">Redis</span></div>
+  </div>
+
+  <div class="layer">
+    <h3>Видео и голос</h3>
+    <p>Женские круги с видеозвонками и живыми комнатами. Голосовые заметки автоматически превращаются в текст.</p>
+    <div class="tags"><span class="tag">Jitsi</span><span class="tag">Livekit</span><span class="tag">Whisper</span></div>
+  </div>
+
+  <div class="layer">
+    <h3>Инфраструктура</h3>
+    <p>Контейнеризованный деплой, обратный прокси, автоматическая смена сертификатов и уведомления.</p>
+    <div class="tags"><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">VDS</span></div>
+  </div>
+
+  <div class="foot">ЖЕНСКИЙ МИР · техническая архитектура · © 2026</div>
+</div>
+</body>
+</html>
